@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
   ),
+  icons: {
+    icon: [{ url: "/ico.png", type: "image/png" }],
+    apple: [{ url: "/ico.png", type: "image/png" }],
+  },
   title: "Adriana Barroso | Nutricionista e Fitoterapeuta em BH",
   description:
     "Acompanhamento nutricional personalizado com foco em saúde, emagrecimento saudável, reeducação alimentar e fitoterapia em Belo Horizonte.",
