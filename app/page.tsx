@@ -1,5 +1,3 @@
-import { Suspense } from "react";
-
 import { About } from "@/components/sections/About";
 import { Benefits } from "@/components/sections/Benefits";
 import { CtaFinal } from "@/components/sections/CtaFinal";
@@ -16,16 +14,7 @@ export default function Home() {
       <Hero />
       <About />
       <ForWho />
-      <Suspense
-        fallback={
-          <div
-            className="h-28 animate-pulse bg-[var(--dark)]"
-            aria-hidden
-          />
-        }
-      >
-        <GoogleReviewsStrip />
-      </Suspense>
+      <GoogleReviewsStrip />
       <Services />
       <Benefits />
       <Testimonials />
