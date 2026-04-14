@@ -1,7 +1,6 @@
 import Link from "next/link";
 
-import { CONTACT, COPY } from "@/lib/constants";
-import { getGooglePlaceReviews } from "@/lib/google-reviews";
+import { CONTACT, GOOGLE_REVIEWS_DISPLAY } from "@/lib/constants";
 import { Star } from "lucide-react";
 
 function StarRow({ rating }: { rating: number }) {
@@ -22,11 +21,12 @@ function StarRow({ rating }: { rating: number }) {
   );
 }
 
-export async function GoogleReviewsStrip() {
-  const data = await getGooglePlaceReviews();
+export function GoogleReviewsStrip() {
   const mapsHref =
     CONTACT.googleMapsUrl?.trim() ||
     "https://www.google.com/search?q=Adriana+Barroso+nutricionista+Belo+Horizonte";
+
+  const { rating, reviewCount, description } = GOOGLE_REVIEWS_DISPLAY;
 
   return (
     <section className="relative overflow-hidden bg-[var(--dark)] py-12 text-white">
@@ -38,54 +38,27 @@ export async function GoogleReviewsStrip() {
         }}
       />
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center md:flex-row md:justify-between md:text-left md:px-8">
-        {data ? (
-          <>
-            <div className="space-y-2">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
-                Google
-              </p>
-              <p className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
-                {data.rating.toFixed(1)}{" "}
-                <span className="text-lg font-normal text-white/80">
-                  ({data.userRatingsTotal}{" "}
-                  {data.userRatingsTotal === 1 ? "avaliacao" : "avaliacoes"})
-                </span>
-              </p>
-              <StarRow rating={data.rating} />
-            </div>
-            <div className="max-w-md text-sm leading-relaxed text-white/85">
-              <p>
-                Pacientes avaliam o atendimento no Google. Veja comentarios reais ou fale direto com
-                a Adriana pelo WhatsApp.
-              </p>
-              <Link
-                href={mapsHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition hover:scale-105 hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                Ver no Google
-              </Link>
-            </div>
-          </>
-        ) : (
-          <div className="flex w-full flex-col items-center gap-4 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
-                Prova social
-              </p>
-              <p className="mt-2 max-w-xl text-lg text-white/90">{COPY.googleReviewsTeaser}</p>
-            </div>
-            <Link
-              href={mapsHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:scale-105 hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              Ver no Google
-            </Link>
-          </div>
-        )}
+        <div className="space-y-2">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">Google</p>
+          <p className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            {rating.toFixed(1)}{" "}
+            <span className="text-lg font-normal text-white/80">
+              ({reviewCount} {reviewCount === 1 ? "avaliação" : "avaliações"})
+            </span>
+          </p>
+          <StarRow rating={rating} />
+        </div>
+        <div className="max-w-md text-sm leading-relaxed text-white/85">
+          <p>{description}</p>
+          <Link
+            href={mapsHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition hover:scale-105 hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--dark)]"
+          >
+            Ver no Google
+          </Link>
+        </div>
       </div>
     </section>
   );

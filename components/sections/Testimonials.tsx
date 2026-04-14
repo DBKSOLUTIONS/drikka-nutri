@@ -2,11 +2,25 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { COPY, TESTIMONIALS } from "@/lib/constants";
+import { CONTACT, COPY, TESTIMONIALS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+
+function FiveStars({ className }: { className?: string }) {
+  return (
+    <div className={cn("flex items-center gap-0.5", className)} aria-hidden>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star
+          key={i}
+          className="h-5 w-5 fill-amber-400 text-amber-400 md:h-6 md:w-6"
+          strokeWidth={0}
+        />
+      ))}
+    </div>
+  );
+}
 
 export function Testimonials() {
   const [index, setIndex] = useState(0);
@@ -46,16 +60,32 @@ export function Testimonials() {
 
       <div className="relative mx-auto max-w-4xl px-6 md:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-12 text-center"
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-10 text-center"
         >
-          <h2 className="text-3xl text-white md:text-4xl">{COPY.testimonialsTitle}</h2>
+          <h2 className="text-3xl tracking-tight text-white md:text-4xl">
+            {COPY.testimonialsTitle}
+          </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
             {COPY.testimonialsDescription}
           </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
+            <a
+              href={CONTACT.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-white/95 backdrop-blur-md transition duration-200 hover:scale-[1.02] hover:bg-white/15"
+            >
+              <Star className="h-4 w-4 fill-amber-400 text-amber-400" strokeWidth={0} />
+              {COPY.heroTrustGoogle}
+            </a>
+            <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-4 py-2 text-white/90 backdrop-blur-sm">
+              {COPY.heroTrustPatients}
+            </span>
+          </div>
         </motion.div>
 
         <div className="relative">
@@ -67,32 +97,40 @@ export function Testimonials() {
               exit={{ opacity: 0, x: -28 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
             >
-              <Card className="relative overflow-hidden rounded-3xl border-2 border-white/10 bg-white shadow-2xl shadow-black/25 ring-1 ring-white/20">
-                <span
-                  className="pointer-events-none absolute left-4 top-4 font-[family-name:var(--font-heading)] text-7xl leading-none text-[var(--primary)]/20 md:left-6 md:top-6 md:text-8xl"
-                  aria-hidden
-                >
-                  &ldquo;
-                </span>
-                <CardContent className="space-y-6 p-8 md:p-10">
-                  <blockquote className="relative z-[1] border-l-4 border-[var(--primary)] pl-6 [font-family:var(--font-heading),serif] text-xl leading-relaxed text-[var(--foreground)] md:text-2xl md:leading-snug">
-                    {current.text}
-                  </blockquote>
-                  <div className="flex flex-col gap-1 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                      <p className="text-lg font-bold tracking-tight text-[var(--dark)] md:text-xl">
-                        {current.name}
-                      </p>
-                      <p className="text-sm font-medium text-[var(--muted-foreground)]">
-                        Paciente do consultorio
-                      </p>
+              <motion.div
+                whileHover={{ scale: 1.01 }}
+                transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <Card className="relative overflow-hidden rounded-3xl border border-white/35 bg-white/90 shadow-2xl shadow-black/30 ring-1 ring-white/25 backdrop-blur-md">
+                  <span
+                    className="pointer-events-none absolute right-4 top-2 select-none font-[family-name:var(--font-heading)] text-7xl leading-none text-[var(--primary)]/15 md:right-8 md:top-4 md:text-8xl"
+                    aria-hidden
+                  >
+                    &ldquo;
+                  </span>
+                  <CardContent className="relative z-[1] space-y-6 p-8 md:p-10">
+                    <div className="space-y-4">
+                      <FiveStars className="justify-start" />
+                      <blockquote className="border-l-4 border-[var(--primary)] pl-6 [font-family:var(--font-heading),serif] text-xl leading-relaxed text-[var(--foreground)] md:text-2xl md:leading-snug">
+                        {current.text}
+                      </blockquote>
                     </div>
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--primary)] text-sm font-bold text-white shadow-md">
-                      {current.initials}
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
+                    <div className="flex flex-col gap-1 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <p className="text-lg font-bold tracking-tight text-[var(--dark)] md:text-xl">
+                          {current.name}
+                        </p>
+                        <p className="text-sm font-medium text-[var(--muted-foreground)]">
+                          Paciente do consultorio
+                        </p>
+                      </div>
+                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--primary)] text-sm font-bold text-white shadow-md">
+                        {current.initials}
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </motion.div>
           </AnimatePresence>
 
@@ -100,7 +138,7 @@ export function Testimonials() {
             <button
               type="button"
               onClick={() => go(-1)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition hover:scale-105 hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition duration-200 hover:scale-105 hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--dark)]"
               aria-label="Depoimento anterior"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -123,7 +161,7 @@ export function Testimonials() {
             <button
               type="button"
               onClick={() => go(1)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition hover:scale-105 hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition duration-200 hover:scale-105 hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--dark)]"
               aria-label="Proximo depoimento"
             >
               <ChevronRight className="h-5 w-5" />

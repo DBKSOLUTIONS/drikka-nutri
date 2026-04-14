@@ -6,7 +6,19 @@ export const CONTACT = {
   address: "Rua Célio Cautiero, 15 - Califórnia - Belo Horizonte",
   crn: "CRN 30783/P",
   /** Perfil / compartilhamento Google (avaliações). Link fixo — sem API. */
-  googleMapsUrl: "https://share.google/UhvFjt7Ja20LLA66a",
+  googleMapsUrl: "https://share.google/Iz2qcU6SL9UfNwwMQ",
+};
+
+/** Nota e total na faixa "Google" — editar manualmente (sem Places API). */
+export const GOOGLE_REVIEWS_DISPLAY: {
+  rating: number;
+  reviewCount: number;
+  description: string;
+} = {
+  rating: 5.9,
+  reviewCount: 100,
+  description:
+    "Pacientes avaliam o atendimento no Google. Veja comentários reais ou fale direto com a Adriana pelo WhatsApp.",
 };
 
 export const COPY = {
@@ -14,6 +26,8 @@ export const COPY = {
   heroSubtitle: "Atendimento humanizado para resultados reais e duradouros",
   heroMicrocopy:
     "Nutricionista e Fitoterapeuta | Atendimento individualizado em Belo Horizonte",
+  heroTrustGoogle: "5.0 no Google",
+  heroTrustPatients: "+100 pacientes atendidos",
   aboutEyebrow: "Sobre",
   aboutTitle: "Adriana Barroso, cuidado nutricional com escuta e estrategia",
   aboutDescription:
@@ -32,8 +46,6 @@ export const COPY = {
   forWhoTitle: "Para quem e esse acompanhamento",
   forWhoDescription:
     "Se voce se identifica com alguma dessas situacoes, o proximo passo pode ser conversar com a Adriana pelo WhatsApp.",
-  googleReviewsTeaser:
-    "Depoimentos e confianca tambem nas avaliacoes do Google.",
 };
 
 export type ServiceItem = {
@@ -102,11 +114,28 @@ export const SERVICES: ServiceItem[] = [
   },
 ];
 
-export const BENEFITS = [
-  "Plano alimentar personalizado",
-  "Acompanhamento continuo",
-  "Abordagem natural",
-  "Resultados sustentaveis",
+export type BenefitItem = {
+  headline: string;
+  line: string;
+};
+
+export const BENEFITS: BenefitItem[] = [
+  {
+    headline: "Plano alimentar personalizado",
+    line: "Montado para sua rotina, gostos e metas — sem fórmulas genéricas.",
+  },
+  {
+    headline: "Acompanhamento contínuo",
+    line: "Ajustes reais entre as consultas para manter evolução e constância.",
+  },
+  {
+    headline: "Abordagem natural",
+    line: "Fitoterapia e hábitos alinhados ao que seu corpo precisa.",
+  },
+  {
+    headline: "Resultados sustentáveis",
+    line: "Mudanças que você consegue manter no longo prazo.",
+  },
 ];
 
 export type TestimonialItem = {
