@@ -28,7 +28,6 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
   --font-sans: var(--font-body);
-  --font-heading: var(--font-heading);
 }
 
 :root {
@@ -75,7 +74,8 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-heading), serif;
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-weight: 600;
     letter-spacing: -0.01em;
   }
 }

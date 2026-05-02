@@ -72,7 +72,7 @@ export function Hero() {
           <div className="relative overflow-hidden rounded-3xl border border-white/50 bg-white/30 shadow-xl shadow-[var(--dark)]/10 ring-1 ring-white/40 backdrop-blur-sm">
             <Image
               src="/images/hero/hero-visual.svg"
-              alt="Consulta nutricional com foco em saude e bem-estar"
+              alt="Consulta nutricional com foco em saúde e bem-estar"
               width={900}
               height={700}
               priority

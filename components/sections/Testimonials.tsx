@@ -103,7 +103,7 @@ export function Testimonials() {
               >
                 <Card className="relative overflow-hidden rounded-3xl border border-white/35 bg-white/90 shadow-2xl shadow-black/30 ring-1 ring-white/25 backdrop-blur-md">
                   <span
-                    className="pointer-events-none absolute right-4 top-2 select-none font-[family-name:var(--font-heading)] text-7xl leading-none text-[var(--primary)]/15 md:right-8 md:top-4 md:text-8xl"
+                    className="pointer-events-none absolute right-4 top-2 select-none text-7xl font-semibold leading-none text-[var(--primary)]/15 md:right-8 md:top-4 md:text-8xl"
                     aria-hidden
                   >
                     &ldquo;
@@ -111,7 +111,7 @@ export function Testimonials() {
                   <CardContent className="relative z-[1] space-y-6 p-8 md:p-10">
                     <div className="space-y-4">
                       <FiveStars className="justify-start" />
-                      <blockquote className="border-l-4 border-[var(--primary)] pl-6 [font-family:var(--font-heading),serif] text-xl leading-relaxed text-[var(--foreground)] md:text-2xl md:leading-snug">
+                      <blockquote className="border-l-4 border-[var(--primary)] pl-6 text-xl font-medium leading-relaxed text-[var(--foreground)] md:text-2xl md:leading-snug">
                         {current.text}
                       </blockquote>
                     </div>
