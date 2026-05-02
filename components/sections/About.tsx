@@ -10,7 +10,7 @@ const HIGHLIGHTS = [
   "Nutricionista + Fitoterapeuta",
   "Atendimento individualizado",
   "Experiencia profissional",
-  "Cuidado focado em saude e bem-estar",
+  "Cuidado focado em saúde e bem-estar",
 ];
 
 export function About() {

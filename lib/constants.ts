@@ -15,37 +15,37 @@ export const GOOGLE_REVIEWS_DISPLAY: {
   reviewCount: number;
   description: string;
 } = {
-  rating: 5.9,
+  rating: 5.0,
   reviewCount: 100,
   description:
     "Pacientes avaliam o atendimento no Google. Veja comentários reais ou fale direto com a Adriana pelo WhatsApp.",
 };
 
 export const COPY = {
-  heroTitle: "Transforme sua saude com acompanhamento nutricional personalizado",
+  heroTitle: "Transforme sua saúde com acompanhamento nutricional personalizado",
   heroSubtitle: "Atendimento humanizado para resultados reais e duradouros",
   heroMicrocopy:
     "Nutricionista e Fitoterapeuta | Atendimento individualizado em Belo Horizonte",
   heroTrustGoogle: "5.0 no Google",
-  heroTrustPatients: "+100 pacientes atendidos",
+  heroTrustPatients: "+300 pacientes atendidos",
   aboutEyebrow: "Sobre",
   aboutTitle: "Adriana Barroso, cuidado nutricional com escuta e estrategia",
   aboutDescription:
-    "Com uma abordagem acolhedora e baseada em evidencia, Adriana desenvolve planos alimentares personalizados para respeitar sua rotina, suas preferencias e seu objetivo de saude.",
-  servicesTitle: "Servicos para sua jornada de saude",
+    "Com uma abordagem acolhedora e baseada em evidência, desenvolvo planos alimentares personalizados para respeitar sua rotina, suas preferencias e seu objetivo de saúde.",
+  servicesTitle: "Serviços para sua jornada de saúde",
   servicesDescription:
-    "Atendimento individual para resultados consistentes, com foco em equilibrio, bem-estar e mudancas sustentaveis.",
+    "Atendimento individual para resultados consistentes, com foco em equilíbrio, bem-estar e mudanças sustentáveis.",
   benefitsTitle: "Por que escolher o acompanhamento da Adriana",
   benefitsDescription:
-    "Cada consulta e pensada para promover evolucao continua com estrategias praticas e realistas.",
+    "Cada consulta e pensada para promover evolução continua com estratégias praticas e realistas.",
   testimonialsTitle: "Resultados reais de quem escolheu mudar",
   testimonialsDescription:
-    "Relatos de pacientes que encontraram mais leveza, saude e confianca com acompanhamento profissional.",
-  finalCtaTitle: "Voce nao precisa passar por isso sozinho(a)",
-  finalCtaSubtitle: "Comece hoje sua transformacao",
+    "Relatos de pacientes que encontraram mais leveza, saúde e confiança com acompanhamento profissional.",
+  finalCtaTitle: "Você não precisa passar por isso sozinho(a)",
+  finalCtaSubtitle: "Comece hoje sua transformação",
   forWhoTitle: "Para quem e esse acompanhamento",
   forWhoDescription:
-    "Se voce se identifica com alguma dessas situacoes, o proximo passo pode ser conversar com a Adriana pelo WhatsApp.",
+    "Se você se identifica com alguma dessas situações, o próximo passo pode ser conversar com a Adriana pelo WhatsApp.",
 };
 
 export type ServiceItem = {
@@ -70,34 +70,34 @@ export const FOR_WHO: ForWhoItem[] = [
   {
     title: "Tem dificuldade com a dieta",
     description:
-      "Rotina apertada, compulsao ou culpa alimentar: estrategias praticas para criar novos habitos.",
+      "Rotina apertada, compulsão ou culpa alimentar: estratégias praticas para criar novos hábitos.",
     icon: "utensils",
   },
   {
     title: "Problemas intestinais",
     description:
-      "Desconforto, inchaço ou digestão irregular com foco em saude intestinal e rotina.",
+      "Desconforto, inchaço ou digestão irregular com foco em saúde intestinal e rotina.",
     icon: "activity",
   },
   {
     title: "Baixa energia",
     description:
-      "Cansaco, falta de disposicao ou sono irregular: nutrição alinhada à sua rotina e metas.",
+      "Cansaço, falta de disposição ou sono irregular: nutrição alinhada à sua rotina e metas.",
     icon: "zap",
   },
 ];
 
 export const SERVICES: ServiceItem[] = [
   {
-    title: "Emagrecimento Saudavel",
+    title: "Emagrecimento Saudável",
     description:
-      "Estrategias personalizadas para promover perda de peso com equilibrio e saude.",
+      "Estratégias personalizadas para promover perda de peso com equilíbrio e saúde.",
     icon: "scale",
   },
   {
-    title: "Reeducacao Alimentar",
+    title: "Reeducação Alimentar",
     description:
-      "Mudancas alimentares sustentaveis para melhorar sua rotina e qualidade de vida.",
+      "Mudanças alimentares sustentáveis para melhorar a sua rotina e qualidade de vida.",
     icon: "apple",
   },
   {
@@ -107,9 +107,9 @@ export const SERVICES: ServiceItem[] = [
     icon: "leaf",
   },
   {
-    title: "Saude Intestinal",
+    title: "Saúde Intestinal",
     description:
-      "Cuidado direcionado para restaurar o equilibrio intestinal e reduzir desconfortos.",
+      "Cuidado direcionado para restaurar o equilíbrio intestinal e reduzir desconfortos.",
     icon: "heartPulse",
   },
 ];
@@ -146,18 +146,18 @@ export type TestimonialItem = {
 
 export const TESTIMONIALS: TestimonialItem[] = [
   {
-    name: "Marina S.",
-    initials: "MS",
-    text: "Consegui emagrecer com equilibrio, sem dietas extremas. O acompanhamento foi essencial para manter constancia e resultados.",
+    name: "Kelly S.",
+    initials: "KS",
+    text: "Adriana Nutri é maravilhosa!!! Sua atenção, explicações sua forma de tratar cada necessidade do paciente e buscar o que vai ser o melhor. Estou encantada com tamanha competência ... E ansiosa pelos resultados 😍",
   },
   {
-    name: "Patricia L.",
-    initials: "PL",
-    text: "A abordagem foi totalmente personalizada para minha rotina. Hoje tenho mais energia, melhor digestao e uma relacao mais saudavel com a comida.",
+    name: "Leticia F.",
+    initials: "LF",
+    text: "Uma excelente profissional, sempre esclarecendo todas minhas dúvidas e ainda fez um planejamento alimentar fácil, prático e bastante nutritivo, adaptado a minha realidade. Comecei a reeducação alimentar a pouco tempo mais já estou sentindo os benefícios, estou super animada e positiva que logo conseguirei com a ajuda da Adriana chegar ao meu peso ideal comendo saudável.",
   },
   {
-    name: "Renata C.",
-    initials: "RC",
-    text: "Me senti acolhida desde a primeira consulta. Com pequenas mudancas semanais, alcancei progresso real e sustentavel.",
+    name: "Janaina R.",
+    initials: "JR",
+    text: "Minha consulta foi um momento terapêutico. A nutricionista Adriana foi atenciosa, soube me ouvir e indicou um plano alimentar que se encaixou perfeitamente em minha rotina. Indico de olhos fechados.",
   },
 ];
